@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vowel or Consonant Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f5f5f5;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        #container {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 400px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        input[type="text"] {
+            padding: 5px;
+            width: 100%;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #result {
+            color: #333;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Vowel or Consonant Checker</h1>
+        <p>Enter a letter: <input type="text" id="letterInput"></p>
+        <button onclick="checkLetter()">Check</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function checkLetter() {
+            const letter = document.getElementById("letterInput").value.toLowerCase();
+
+            if (/^[a-z]$/.test(letter)) {
+                switch (letter) {
+                    case 'a':
+                    case 'e':
+                    case 'i':
+                    case 'o':
+                    case 'u':
+                        document.getElementById("result").textContent = "It's a vowel!";
+                        break;
+                    default:
+                        document.getElementById("result").textContent = "It's a consonant!";
+                        break;
+                }
+            } else {
+                document.getElementById("result").textContent = "Please enter a valid letter.";
+            }
+        }
+    </script>
+</body>
+</html>
